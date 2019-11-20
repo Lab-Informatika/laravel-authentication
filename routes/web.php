@@ -25,3 +25,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::patch('profile', 'ProfileController@update')->name('profile.update');
 });
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('password', 'PasswordController@edit')->name('user.password.edit');
+
+    Route::patch('password', 'PasswordController@update')->name('user.password.update');
+});
